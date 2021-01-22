@@ -116,32 +116,75 @@ def calculoAU (frame, lista):
     add(AU27, lista)
     
 
-nome1 = input("Nome do arquivo Neutro:")
+while(True):
+    # EMOTION NUMBER:
+    # 1 -> ANGER / 2 -> ? / 3 -> DISGUST / 4 -> FEAR / 5 -> HAPINESS / 6 -> SADNESS / 7 -> SURPRISE
+    expression = int(input("Emotion Number:"))
+    
+    nome1 = input("File PATH Neutro:")
 
-nome2 = input("Nome do arquivo Ápice:")
-#recebe o arquivo da base de dados CK Neutra
-frame1 = cv2.imread(nome1+".png")
+    nome2 = input("File PATH Ápice:")
+    
+    #recebe o arquivo da base de dados CK Neutra
+    frame1 = cv2.imread(nome1+".png")
 
-#recebe o arquivo da base de dados CK Ápice
-frame2 = cv2.imread(nome2+".png")
+    #recebe o arquivo da base de dados CK Ápice
+    frame2 = cv2.imread(nome2+".png")
+    
+    if expression == 1:
+        print("Success")
+        calculoAU(frame1, lista1)
 
-calculoAU(frame1, lista1)
+        calculoAU(frame2, lista2)
+    elif expression == 2:
+        print("Success")
+        
+        calculoAU(frame1, lista1)
 
-calculoAU(frame2, lista2)
+        calculoAU(frame2, lista2)
+    elif expression == 3:
+        print("Success")
+        
+        calculoAU(frame1, lista1)
 
-f = open("demofile.txt", "a")
+        calculoAU(frame2, lista2)
+    elif expression == 4:
+        print("Success")
+        calculoAU(frame1, lista1)
 
-f.write("AUs_Neutra "+"AUs_Ápice "+"Variação"+"\n")
+        calculoAU(frame2, lista2)
+    elif expression == 5:
+        print("Success")
+        calculoAU(frame1, lista1)
 
-for i in range(0, len(lista1)):
-    f.write("%.2f    | %.2f    | %.2f \n" %(lista1[i], lista2[i], lista2[i]-lista1[i]))
+        calculoAU(frame2, lista2)
+    elif expression == 6:
+        print("Success")
+        calculoAU(frame1, lista1)
 
-f.close()
+        calculoAU(frame2, lista2)
+    elif expression == 7:
+        print("Success")
+        calculoAU(frame1, lista1)
+
+        calculoAU(frame2, lista2)
+    else:
+        print("INAVLID EXPRESSION NUMBER")
+    
+
+    f = open("demofile.txt", "a")
+
+    f.write("AUs_Neutra "+"AUs_Ápice "+"Variação"+"\n")
+
+    #for i in range(0, len(lista1)):
+        #f.write("%.2f    | %.2f    | %.2f \n" %(lista1[i], lista2[i], lista2[i]-lista1[i]))
+
+    #f.close()
      
-cv2.imshow("frame",frame1)
+#cv2.imshow("frame",frame1)
 
-cv2.imshow("frame2",frame2)
+#cv2.imshow("frame2",frame2)
 
 
-cv2.waitKey(0)    
-cv2.destroyAllWindows()
+#cv2.waitKey(0)    
+#cv2.destroyAllWindows()
