@@ -23,6 +23,6 @@ pip install face_recognition
 # Install OpenCV-Python to Capture Frames
 Use the 'sudo apt install python3-opencv' on Linux distribiutions and use 'import cv2' on Python terminal to test if it was already installed.
 
-# Intall OpenCV-Python (Windows)
+# Install OpenCV-Python (Windows)
 If you have already installed python on your system, you can install OpenCV with this command using pip 'pip install opencv-python'  
 
